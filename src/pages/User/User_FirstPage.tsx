@@ -16,8 +16,8 @@ import User_AppBar from "./User_AppBar";
   function User_FirstPage() {
   
     const navigate = useNavigate();
-    // function navigateToLogin(){
-    //   navigate("/login")
+    // function navigateToAbout(){
+    //   navigate("/userAboutPage")
     // }
   
     return (

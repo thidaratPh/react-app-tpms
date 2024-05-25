@@ -22,12 +22,12 @@ function User_AppBar() {
   };
 
   const navigate = useNavigate();
-  function navigateToLogin() {
-    navigate("/login");
+  function navigateToAbout(){
+    navigate("/userAboutPage")
   }
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
           <Typography
             onClick={handleClick}
@@ -38,7 +38,7 @@ function User_AppBar() {
           >
             หลักสูตร
           </Typography>
-          <Menu
+          {/* <Menu
             id="basic-menu"
             anchorEl={anchorEl}
             open={open}
@@ -50,7 +50,7 @@ function User_AppBar() {
             <MenuItem onClick={handleClose}>Profile</MenuItem>
             <MenuItem onClick={handleClose}>My account</MenuItem>
             <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu> 
+          </Menu>  */}
 
 
           <Typography
@@ -72,7 +72,7 @@ function User_AppBar() {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleClose}>ข้อมูลส่วนตัว</MenuItem>
+            <MenuItem onClick={navigateToAbout}>ข้อมูลส่วนตัว</MenuItem>
             <MenuItem onClick={handleClose}>หลักสูตรของฉัน</MenuItem>
             <MenuItem onClick={handleClose}>ออกจากระบบ</MenuItem>
           </Menu> 
