@@ -1,15 +1,9 @@
-import {
-  AppBar,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import PersonIcon from '@mui/icons-material/Person';
+import PersonIcon from "@mui/icons-material/Person";
 
-function User_AppBar() {
+function Admin_AppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -20,12 +14,15 @@ function User_AppBar() {
   };
 
   const navigate = useNavigate();
-  function navigateToAbout(){
-    navigate("/userAboutPage")
+  function navigateToAbout() {
+    navigate("/userAboutPage");
   }
   return (
     <>
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+      <AppBar
+        position="fixed"
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      >
         <Toolbar>
           <Typography
             onClick={handleClick}
@@ -37,19 +34,18 @@ function User_AppBar() {
             หลักสูตร
           </Typography>
           {/* <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu>  */}
-
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
+        }}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>  */}
 
           <Typography
             onClick={handleClick}
@@ -58,8 +54,7 @@ function User_AppBar() {
             sx={{ flexGrow: 0 }}
             style={{ fontSize: "16px" }}
           >
-            <PersonIcon/>  &nbsp;
-            ธิดารัตน์ ภูกองชนะ
+            <PersonIcon /> &nbsp; Admin
           </Typography>
           <Menu
             id="basic-menu"
@@ -73,10 +68,10 @@ function User_AppBar() {
             <MenuItem onClick={navigateToAbout}>ข้อมูลส่วนตัว</MenuItem>
             <MenuItem onClick={handleClose}>หลักสูตรของฉัน</MenuItem>
             <MenuItem onClick={handleClose}>ออกจากระบบ</MenuItem>
-          </Menu> 
+          </Menu>
         </Toolbar>
       </AppBar>
     </>
   );
 }
-export default User_AppBar;
+export default Admin_AppBar;

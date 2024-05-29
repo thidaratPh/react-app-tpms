@@ -1,5 +1,6 @@
 import {
   AppBar,
+  Button,
   Menu,
   MenuItem,
   Toolbar,
@@ -7,9 +8,8 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import PersonIcon from '@mui/icons-material/Person';
 
-function User_AppBar() {
+function AppBarFrist() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -20,12 +20,13 @@ function User_AppBar() {
   };
 
   const navigate = useNavigate();
-  function navigateToAbout(){
-    navigate("/userAboutPage")
+  function navigateToLogin() {
+    navigate("/login");
   }
+
   return (
     <>
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+      <AppBar position="static">
         <Toolbar>
           <Typography
             onClick={handleClick}
@@ -36,7 +37,7 @@ function User_AppBar() {
           >
             หลักสูตร
           </Typography>
-          {/* <Menu
+          <Menu
             id="basic-menu"
             anchorEl={anchorEl}
             open={open}
@@ -48,35 +49,13 @@ function User_AppBar() {
             <MenuItem onClick={handleClose}>Profile</MenuItem>
             <MenuItem onClick={handleClose}>My account</MenuItem>
             <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu>  */}
-
-
-          <Typography
-            onClick={handleClick}
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 0 }}
-            style={{ fontSize: "16px" }}
-          >
-            <PersonIcon/>  &nbsp;
-            ธิดารัตน์ ภูกองชนะ
-          </Typography>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <MenuItem onClick={navigateToAbout}>ข้อมูลส่วนตัว</MenuItem>
-            <MenuItem onClick={handleClose}>หลักสูตรของฉัน</MenuItem>
-            <MenuItem onClick={handleClose}>ออกจากระบบ</MenuItem>
-          </Menu> 
+          </Menu>
+          <Button onClick={navigateToLogin} color="inherit">
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
     </>
   );
 }
-export default User_AppBar;
+export default AppBarFrist;

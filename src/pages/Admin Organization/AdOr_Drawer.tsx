@@ -4,7 +4,7 @@ import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 const drawerWidth = 240;
 
-function User_Drawer() {
+function AdOr_Drawer() {
     return <>
     <Drawer
         variant="permanent"
@@ -35,4 +35,4 @@ function User_Drawer() {
       </Drawer>
     </>
 }
-export default User_Drawer;
+export default AdOr_Drawer;

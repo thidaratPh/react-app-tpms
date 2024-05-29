@@ -1,10 +1,9 @@
 import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar } from "@mui/material";
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 import PersonIcon from '@mui/icons-material/Person';
-import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
 const drawerWidth = 240;
 
-function User_Drawer() {
+function Admin_Drawer() {
     return <>
     <Drawer
         variant="permanent"
@@ -19,11 +18,11 @@ function User_Drawer() {
         <Box sx={{ overflow: 'auto' }}>
           
           <List>
-            {['ข้อมูลส่วนตัว', 'หลักสูตรของฉัน', 'โปรไฟล์ของฉัน'].map((text, index) => (
+            {['องค์กรที่รอการอนุมัติ', 'ผู้สอนที่รอการอนุมัติ'].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
-                  {index === 0 ? <PersonIcon /> : index === 1 ? <LibraryBooksIcon /> : <AccountBoxIcon />}
+                    {index % 2 === 0 ? <HomeRepairServiceIcon /> : <PersonIcon />}
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>
@@ -35,4 +34,4 @@ function User_Drawer() {
       </Drawer>
     </>
 }
-export default User_Drawer;
+export default Admin_Drawer;

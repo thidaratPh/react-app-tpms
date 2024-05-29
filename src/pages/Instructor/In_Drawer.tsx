@@ -4,7 +4,7 @@ import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 const drawerWidth = 240;
 
-function User_Drawer() {
+function In_Drawer() {
     return <>
     <Drawer
         variant="permanent"
@@ -19,7 +19,7 @@ function User_Drawer() {
         <Box sx={{ overflow: 'auto' }}>
           
           <List>
-            {['ข้อมูลส่วนตัว', 'หลักสูตรของฉัน', 'โปรไฟล์ของฉัน'].map((text, index) => (
+            {['ข้อมูลส่วนตัว', 'รายการอบรมที่ถูกเชิญ', 'โปรไฟล์ของฉัน'].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
@@ -35,4 +35,4 @@ function User_Drawer() {
       </Drawer>
     </>
 }
-export default User_Drawer;
+export default In_Drawer;
