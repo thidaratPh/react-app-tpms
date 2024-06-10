@@ -7,8 +7,8 @@ import In_Drawer from "./In_Drawer";
 
 function In_CoursePage() {
   const navigate = useNavigate();
-  function navigateToAddDoc() {
-    navigate("/InAddDocPage");
+  function navigateToAboutCourse() {
+    navigate("/InAboutCoursePage");
   }
   return (
     <>
@@ -30,9 +30,9 @@ function In_CoursePage() {
             <Grid item xs={4}>
               วันที่
             </Grid>
-            <Grid item xs={2}>
-              อัปโหลด
-            </Grid>
+            {/* <Grid item xs={2}>
+              จัดการหลักสูตร
+            </Grid> */}
           </Grid>
 
           <Divider
@@ -56,8 +56,8 @@ function In_CoursePage() {
             </Grid>
             <Grid item xs={2}>
               <Grid item xs={12}>
-                <Button onClick={navigateToAddDoc} variant="contained" size="small" color="success">
-                  เพิ่มเอกสารประกอบการสอน
+                <Button onClick={navigateToAboutCourse} variant="contained" size="small" color="success">
+                  จัดการหลักสูตร
                 </Button>
               </Grid>
             </Grid>

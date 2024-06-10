@@ -14,20 +14,19 @@ function LoginPage() {
   };
 
   const navigate = useNavigate();
-  // function navigateToSignUp(){
-  //   navigate("/signup")
-  // }
+  function navigateToHome(){
+    navigate("/")
+  }
 
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
-            
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <img src="src\img\kitty.png" onClick={navigateToHome} style={{width:"50px" , cursor: 'pointer'}}  />
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} marginLeft={2}>
               เข้าสู่ระบบ
             </Typography>
-            {/* <Button color="inherit">Login</Button> */}
           </Toolbar>
         </AppBar>
       </Box>

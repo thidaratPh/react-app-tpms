@@ -4,51 +4,68 @@ import { useNavigate } from "react-router-dom";
 import PersonIcon from "@mui/icons-material/Person";
 
 function Admin_AppBar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const [courseAnchorEl, setCourseAnchorEl] = React.useState(null);
+  const [adminAnchorEl, setAdminAnchorEl] = React.useState(null);
+  const openCourseMenu = Boolean(courseAnchorEl);
+  const openAdminMenu = Boolean(adminAnchorEl);
+
+  const handleCourseClick = (event) => {
+    setCourseAnchorEl(event.currentTarget);
+  };
+  const handleAdminClick = (event) => {
+    setAdminAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
-    setAnchorEl(null);
+    setCourseAnchorEl(null);
+    setAdminAnchorEl(null);
   };
 
   const navigate = useNavigate();
-  function navigateToAbout() {
-    navigate("/userAboutPage");
-  }
+  const navigateToCfAdOr = () => {
+    navigate("/adminCFAdOr");
+  };
+  const navigateToCFIn = () => {
+    navigate("/adminCFIn");
+  };
+  const navigateToHome = () => {
+    navigate("/adminFirstPage");
+  };
+  const navigateToFirst = () => {
+    navigate("/");
+  };
+
   return (
     <>
-      <AppBar
-        position="fixed"
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-      >
+      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
+        <img src="src\img\kitty.png" onClick={navigateToHome} style={{width:"50px" , cursor: 'pointer'}}  />
+
           <Typography
-            onClick={handleClick}
+            onClick={handleCourseClick}
             variant="h6"
             component="div"
             sx={{ flexGrow: 1 }}
             style={{ fontSize: "16px" }}
+            marginLeft={2}
           >
             หลักสูตร
           </Typography>
-          {/* <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
-      >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>  */}
+          <Menu
+            id="course-menu"
+            anchorEl={courseAnchorEl}
+            open={openCourseMenu}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "course-button",
+            }}
+          >
+            <MenuItem onClick={handleClose}>Java</MenuItem>
+            <MenuItem onClick={handleClose}>C++</MenuItem>
+            <MenuItem onClick={handleClose}>CSS</MenuItem>
+          </Menu>
 
           <Typography
-            onClick={handleClick}
+            onClick={handleAdminClick}
             variant="h6"
             component="div"
             sx={{ flexGrow: 0 }}
@@ -57,21 +74,22 @@ function Admin_AppBar() {
             <PersonIcon /> &nbsp; Admin
           </Typography>
           <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
+            id="admin-menu"
+            anchorEl={adminAnchorEl}
+            open={openAdminMenu}
             onClose={handleClose}
             MenuListProps={{
-              "aria-labelledby": "basic-button",
+              "aria-labelledby": "admin-button",
             }}
           >
-            <MenuItem onClick={navigateToAbout}>ข้อมูลส่วนตัว</MenuItem>
-            <MenuItem onClick={handleClose}>หลักสูตรของฉัน</MenuItem>
-            <MenuItem onClick={handleClose}>ออกจากระบบ</MenuItem>
+            <MenuItem onClick={navigateToCfAdOr}>องค์กรที่รอการอนุมัติ</MenuItem>
+            <MenuItem onClick={navigateToCFIn}>ผู้สอนที่รอการอนุมัติ</MenuItem>
+            <MenuItem onClick={navigateToFirst}>ออกจากระบบ</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
     </>
   );
 }
+
 export default Admin_AppBar;

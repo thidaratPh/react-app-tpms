@@ -51,7 +51,7 @@ function Admin_CF_AdOrPage() {
               </Grid>
               <Grid item xs={6} marginTop={1}>
                 {" "}
-                <Button variant="contained" color="error" size="small">
+                <Button variant="contained"  size="small" style={{background:"red"}}>
                   ไม่อนุมัติ
                 </Button>
               </Grid>

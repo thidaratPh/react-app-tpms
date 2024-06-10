@@ -23,17 +23,22 @@ function AppBarFrist() {
   function navigateToLogin() {
     navigate("/login");
   }
+  function navigateToHome() {
+    navigate("/");
+  }
 
   return (
     <>
       <AppBar position="static">
         <Toolbar>
+        <img src="src\img\kitty.png" onClick={navigateToHome} style={{width:"50px" , cursor: 'pointer'}}  />
           <Typography
             onClick={handleClick}
             variant="h6"
             component="div"
             sx={{ flexGrow: 1 }}
             style={{ fontSize: "16px" }}
+            marginLeft={2}
           >
             หลักสูตร
           </Typography>
@@ -45,10 +50,10 @@ function AppBarFrist() {
             MenuListProps={{
               "aria-labelledby": "basic-button",
             }}
-          >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
+            >
+            <MenuItem onClick={handleClose}>Java</MenuItem>
+            <MenuItem onClick={handleClose}>C++</MenuItem>
+            <MenuItem onClick={handleClose}>CSS</MenuItem>
           </Menu>
           <Button onClick={navigateToLogin} color="inherit">
             Login

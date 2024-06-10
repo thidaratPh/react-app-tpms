@@ -22,6 +22,12 @@ import In_FirstPage from './pages/Instructor/In_FirstPage';
 import In_AboutPage from './pages/Instructor/In_AboutPage';
 import In_CoursePage from './pages/Instructor/In_CoursePage';
 import In_AddDocPage from './pages/Instructor/In_AddDocPage';
+import In_AbouteCoursePage from './pages/Instructor/In_AboutCoursePage';
+import In_ProfilePage from './pages/Instructor/In_ProfilePage';
+import AboutCoursePage from './pages/AboutCoursePage';
+import AdOr_AboutCoursePage from './pages/Admin Organization/AdOr_AboutCoursePage';
+import In_InfoCoursePage from './pages/Instructor/In_InfoCoursePage';
+import Admin_AboutCoursePage from './pages/Admin/Admin_AboutCoursePage';
 
 const routers = createBrowserRouter(
   [
@@ -31,6 +37,7 @@ const routers = createBrowserRouter(
     { path: "/signupAdOr", element: <SignUp_AdOrPage /> },
     { path: "/signupIn", element: <SignUP_InPage /> },
     { path: "/signupUser", element: <SignUp_UserPage /> },
+    { path: "/aboutCourse", element: <AboutCoursePage /> },
     { path: "/userFirstPage", element: <User_FirstPage /> },
     { path: "/userAboutPage", element: <User_AboutPage /> },
     { path: "/userCoursePage", element: <User_CoursePage /> },
@@ -39,14 +46,19 @@ const routers = createBrowserRouter(
     { path: "/adminFirstPage", element: <Admin_FirstPage /> },
     { path: "/adminCFAdOr", element: <Admin_CF_AdOrPage /> },
     { path: "/adminCFIn", element: <Admin_CF_InPage /> },
+    { path: "/adminAboutCousePage", element: <Admin_AboutCoursePage /> },
     { path: "/AdOrFirstPage", element: <AdOr_FirstPage /> },
     { path: "/AdOrAboutPage", element: <AdOr_AboutPage /> },
     { path: "/AdOrCoursePage", element: <AdOr_CoursePage /> },
     { path: "/AdOrAddCoursePage", element: <AdOr_AddCoursePage /> },
+    { path: "/AdOrAboutCoursePage", element: <AdOr_AboutCoursePage /> },
     { path: "/InFirstPage", element: <In_FirstPage /> },
     { path: "/InAboutPage", element: <In_AboutPage /> },
     { path: "/InCoursePage", element: <In_CoursePage /> },
-    { path: "/InAddDocPage", element: <In_AddDocPage /> }
+    { path: "/InAddDocPage", element: <In_AddDocPage /> },
+    { path: "/InAboutCoursePage", element: <In_AbouteCoursePage /> },
+    { path: "/InProfilePage", element: <In_ProfilePage /> },
+    { path: "/InInfoCoursePage", element: <In_InfoCoursePage /> },
   ]
 );
 

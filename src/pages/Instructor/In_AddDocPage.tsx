@@ -20,7 +20,7 @@ function In_AddDocPage() {
           }}
         >
           <Typography component="h1" variant="h5">
-            เพิ่มหลักสูตร
+            เพิ่มเนื้อหาการสอน
           </Typography>
           <Box component="form" noValidate sx={{ mt: 3 }}>
             <Grid container spacing={2}>

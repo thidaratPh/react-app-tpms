@@ -1,14 +1,14 @@
 import { Box } from "@mui/system";
-import User_AppBar from "./User_AppBar";
-import User_Drawer from "./User_Drawer";
 import { Card, Grid, Toolbar, Typography } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-function User_ProfilePage() {
+import In_AppBar from "./In_AppBar";
+import In_Drawer from "./In_Drawer";
+function In_ProfilePage() {
   return (
     <>
       <Box sx={{ display: "flex" }}>
-        <User_AppBar />
-        <User_Drawer />
+        <In_AppBar />
+        <In_Drawer />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar />
           <Grid container>
@@ -17,10 +17,10 @@ function User_ProfilePage() {
             </Grid>
             <Grid item xs={7} marginTop={2}>
               <Grid item xs={6}>
-                ธิดารัตน์ ภูกองชนะ
+                Aj. M
               </Grid>
               <Grid item xs={6} marginTop={1}>
-                Thidarat Phookongchana
+              Aj. M
               </Grid>
             </Grid>
             <Grid item xs={2}>
@@ -40,7 +40,7 @@ function User_ProfilePage() {
                 textUnderlineOffset: "2px",
               }}
             >
-              หลักสูตรที่ผ่านการอบรม
+              หลักสูตรที่จัดการอบรม
             </Typography>
 
             <Grid container spacing={3} padding={3}>
@@ -101,4 +101,4 @@ function User_ProfilePage() {
     </>
   );
 }
-export default User_ProfilePage;
+export default In_ProfilePage;

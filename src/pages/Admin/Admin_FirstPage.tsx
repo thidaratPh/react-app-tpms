@@ -1,6 +1,6 @@
 import Admin_AppBar from "./Admin_AppBar";
 import { Box } from "@mui/system";
-import Course from "../Course";
+import Admin_AllCourse from "./Admin_AllCourse";
 function Admin_FirstPage() {
   return (
     <>
@@ -8,7 +8,7 @@ function Admin_FirstPage() {
         <Admin_AppBar />
       </Box>
       <Box>
-        <Course />
+        <Admin_AllCourse />
       </Box>
     </>
   );

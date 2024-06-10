@@ -1,14 +1,14 @@
 import { Box } from "@mui/system";
 import AdOr_AppBar from "./AdOr_AppBar";
-import Course from "../Course";
+import AdOr_AllCourse from "./AdOr_AllCourse";
 
 function AdOr_FirstPage() {
     return <>
-    <Box sx={{ flexGrow: 1 }}>
+    <Box >
         <AdOr_AppBar />
       </Box>
       <Box>
-        <Course />
+        <AdOr_AllCourse />
       </Box></>
 }
 export default AdOr_FirstPage;

@@ -1,44 +1,78 @@
-import { AppBar, Avatar, Button, Grid, Link, TextField, Toolbar, Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import {
+  AppBar,
+  Avatar,
+  Button,
+  Grid,
+  Link,
+  TextField,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import { Box, Container } from "@mui/system";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { useNavigate } from "react-router-dom";
 
 function SignUp_AdOrPage() {
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-          email: data.get('email'),
-          password: data.get('password'),
-        });
-      };
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get("email"),
+      password: data.get("password"),
+    });
+  };
+
+  const navigate = useNavigate();
+  function navigateToAdOr() {
+    navigate("/AdOrFirstPage");
+  }
+  function navigateToHome() {
+    navigate("/");
+  }
 
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <img
+              src="src\img\kitty.png"
+              onClick={navigateToHome}
+              style={{ width: "50px", cursor: "pointer" }}
+            />
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1 }}
+              marginLeft={2}
+            >
+              
               ผู้ดูแลองค์กร (Admin Organization)
             </Typography>
           </Toolbar>
         </AppBar>
       </Box>
-
-      <Box
+      <Container component="main">
+        <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box
+            component="form"
+            noValidate
+            onSubmit={handleSubmit}
+            sx={{ mt: 3 }}
+          >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -72,15 +106,15 @@ function SignUp_AdOrPage() {
                 />
               </Grid>
               <Grid item xs={12}>
-            <Typography>อัปโหลดไฟล์ลายเซ็นต์</Typography>
-              <TextField
-                required
-                fullWidth
-                type="file"
-                id="sign"
-                // label="ลายเซ็นต์"
-              />
-            </Grid>
+                <Typography>อัปโหลดไฟล์ลายเซ็นต์</Typography>
+                <TextField
+                  required
+                  fullWidth
+                  type="file"
+                  id="sign"
+                  // label="ลายเซ็นต์"
+                />
+              </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
@@ -123,14 +157,13 @@ function SignUp_AdOrPage() {
                   autoComplete="new-password"
                 />
               </Grid>
-              
-              
             </Grid>
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={navigateToAdOr}
             >
               Sign Up
             </Button>
@@ -143,6 +176,7 @@ function SignUp_AdOrPage() {
             </Grid>
           </Box>
         </Box>
+      </Container>
     </>
   );
 }

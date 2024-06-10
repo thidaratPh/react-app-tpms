@@ -1,10 +1,10 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-function Course() {
+function Admin_AllCourse() {
   const navigate = useNavigate();
     function navigateToAboutCourse(){
-      navigate("/aboutCourse")
+      navigate("/adminAboutCousePage")
     }
     return <>
     {/* เป็นหลักสูตรทั้งหมดในหน้าแรกของทุกผู้ใช้ */}
@@ -125,4 +125,4 @@ function Course() {
         </Grid>
     </>
 }
-export default Course;
+export default Admin_AllCourse;

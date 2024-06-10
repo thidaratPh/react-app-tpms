@@ -9,10 +9,9 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import User_AppBar from "./User_AppBar";
-import Course from "../Course";
+import User_AllCourse from "./User_AllCourse";
 
 function User_FirstPage() {
   const navigate = useNavigate();
@@ -27,7 +26,7 @@ function User_FirstPage() {
       </Box>
 
       <Box>
-        <Course />
+        <User_AllCourse />
       </Box>
     </>
   );
